@@ -1,4 +1,4 @@
-package com.hcc.dto;
+package com.hcc.entities;
 
 import com.hcc.entities.Assignment;
 import com.hcc.enums.AssignmentEnum;

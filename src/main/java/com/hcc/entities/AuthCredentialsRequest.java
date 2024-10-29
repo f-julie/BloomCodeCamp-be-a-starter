@@ -1,4 +1,4 @@
-package com.hcc.dto;
+package com.hcc.entities;
 
 public class AuthCredentialsRequest {
 
