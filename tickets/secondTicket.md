@@ -192,7 +192,7 @@ public class jwtFilter extends OncePerRequestFilter {
 ```java
 package com.hcc.config;
 
-import com.hcc.filters.jwtFilter;
+import com.hcc.filters.JwtFilter;
 import com.hcc.services.UserDetailServiceImpl;
 import com.hcc.utils.CustomPasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;

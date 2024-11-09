@@ -1,11 +1,17 @@
 package com.hcc.entities;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 @Entity
-@Table(name="user")
-public class User {
+@Table(name="users")
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,6 +30,30 @@ public class User {
     public User(LocalDate cohortStartDate, String username, String password) {
         this.cohortStartDate = cohortStartDate;
         this.username = username;
+        this.password = password;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public LocalDate getCohortStartDate() {
+        return cohortStartDate;
+    }
+
+    public void setCohortStartDate(LocalDate cohortStartDate) {
+        this.cohortStartDate = cohortStartDate;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
         this.password = password;
     }
 

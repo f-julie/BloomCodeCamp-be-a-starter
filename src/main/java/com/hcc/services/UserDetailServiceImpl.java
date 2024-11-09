@@ -14,14 +14,19 @@ import java.util.Optional;
 
 @Service
 public class UserDetailServiceImpl implements UserDetailsService {
-//    @Autowired
-//    CustomPasswordEncoder passwordEncoder;
+    @Autowired
+    CustomPasswordEncoder passwordEncoder;
 
     @Autowired
     UserRepository userRepo;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+//        User user = new User();
+//        user.setUsername(username);
+//        user.setPassword(passwordEncoder.getPasswordEncoder().encode("asdfasdf"));
+//        return user;
+
         Optional<User> userOpt = userRepo.findByUsername(username);
 //        user.setUsername(username);
 //        user.setPassword(passwordEncoder.getPasswordEncoder().encode("asdfasdf"));
